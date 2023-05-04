@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import WelcomePage from "./components/WelcomePage/welcomePage";
+import AuthPage from "./components/AuthPage/Auth";
 import MainPage from "./components/MainPage/mainPage";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
         {Login ? (
           <MainPage setLogin={setLogin} />
         ) : (
-          <WelcomePage setLogin={setLogin} />
+          <AuthPage setLogin={setLogin} />
         )}
       </div>
     </div>
