@@ -2,31 +2,27 @@ import "./styleWelcomePage.css";
 
 export default function WelcomePage({ setLogin }) {
   function LoginTrue() {
-    setLogin(true);
+    setLogin(true); 
   }
 
   return (
     <>
       <main className="HomePage">
         <aside>
-          <div className="conteudos">
+          <div className="contents">
+            <div className="companyLogo">
             <img
               className="logo"
               src="assets/Nu Kenzie.png"
               alt="Logo Nu Kenzie Branco"
             />
-            <h1>Centralize o controle das suas finanças</h1>
-            <p className="bordao">de forma rápida e segura</p>
+            <h2>OMNITECH</h2>
+            </div>
+            <h1>Welcome kaOMNIVERSE!</h1>
+            <p className="text">Your problem, my solution!</p>
             <button className="button" onClick={() => LoginTrue()}>
-              Iniciar
+              Enter
             </button>
-          </div>
-          <div className="divImgIlustracao">
-            <img
-              className="ilustracao"
-              src="assets/illustration.png"
-              alt="Ilustração"
-            />
           </div>
         </aside>
       </main>

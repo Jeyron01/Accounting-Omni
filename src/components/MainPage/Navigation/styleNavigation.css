@@ -1,25 +1,25 @@
-.containerNavigation {
+  .containerNavigation {
   display: flex;
   margin-bottom: 40px;
   align-items: center;
   justify-content: space-between;
 }
 
-.btn_Rosa {
+.all {
   width: 100%;
-  height: 40px;
-  background: #fd377e;
-  border: 1.4px solid #fd377e;
+  height: 55px;
+  background: #68a2ff;
+  border: 1.4px solid #68a2ff;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
-  color: #ffffff;
+  color: #ffffff;   
 }
-.btn_Cinza {
+.others {
   color: #343a40;
   text-align: center;
   width: 100%;
-  height: 40px;
+  height: 55px;
   background: #e9ecef;
   border: 1.4px solid #e9ecef;
   border-radius: 8px;
@@ -27,8 +27,8 @@
 }
 
 .containerBtn {
-  display: flex;
-  width: 60%;
+  display:inline-flex;
+  width: 60%; 
 
   gap: 20px;
 }
@@ -48,7 +48,7 @@
 
 @media only screen and (max-width: 434px) {
   .containerBtn {
-    width: auto;
+    width: 100%;
     gap: 20px;
   }
 
@@ -56,4 +56,8 @@
     flex-direction: column;
     margin-top: 30px;
   }
+}
+h4.title{
+  color: #68a2ff;
+  margin-top: 10px;
 }

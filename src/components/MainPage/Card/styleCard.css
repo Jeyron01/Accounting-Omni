@@ -1,29 +1,29 @@
-.containerListVerde {
-  height: 87px;
-  width: 100%;
-  background: #f8f9fa;
-  border-radius: 12px;
-  margin-bottom: 32px;
-
-  border-left: 8px solid #03b898;
-}
-
-.containerListVermelho {
-  height: 87px;
+.containerListGreen {
+  height: 150px;
   width: 100%;
   background: #f8f9fa;
   border-radius: 14px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+
+  border-left: 8px solid #68a2ff;
+}
+
+.containerListRed {
+  height: 150px;
+  width: 100%;
+  background: #f8f9fa;
+  border-radius: 14px;
+  margin-bottom: 20px;
 
   border-left: 8px solid red;
 }
 
-.containerListVermelho:hover {
+.containerListRed:hover {
   transition-duration: 350ms;
 
   box-shadow: 0px 0px 19px 0px rgba(50, 50, 50, 0.75);
 }
-.containerListVerde:hover {
+.containerListGreen:hover {
   transition-duration: 350ms;
   box-shadow: 0px 0px 19px 0px rgba(50, 50, 50, 0.75);
 }
@@ -31,17 +31,14 @@
 .ContainerDescriptionEType {
   padding-left: 38px;
   margin-right: 41px;
-  margin-bottom: 15px;
   font-weight: 700;
-  font-size: 16px;
-  line-height: 30px;
-
+  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.valor {
+.value {
   color: #212529;
   font-weight: 600;
   font-size: 14px;
@@ -51,10 +48,16 @@
 .type {
   padding-left: 38px;
   font-weight: 600;
-  font-size: 12px;
-  line-height: 22px;
+  font-size: 15px;
+  line-height: 25px;
+  align-items: center;
 }
 
-.lixeira {
+.bin {
   border: none;
+  margin-top: 43px;
+  font-size: 22px;
+}
+.imgLixeira{
+  width: 50px;
 }

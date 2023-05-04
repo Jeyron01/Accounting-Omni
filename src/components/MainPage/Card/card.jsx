@@ -1,8 +1,9 @@
 import "./styleCard.css";
+import { BsTrashFill } from 'react-icons/bs';
 export default function Card({
   toDoList,
   setToDoList,
-  tipoValor,
+  valueType,
   element,
   setListFilter,
   listFilter,
@@ -13,32 +14,26 @@ export default function Card({
   }
   return (
     <>
-      {tipoValor === "Entrada" ? (
-        <div className="containerListVerde">
+      {valueType === "Income" ? (
+        <div className="containerListGreen">
           <div className="ContainerDescriptionEType">
-            <h3 className="description">{element.description}</h3>
-            <span className="valor">R$ {element.value}</span>
-            <button className="lixeira" onClick={() => handleItenList(element)}>
-              <img
-                className="imgLixeira"
-                src="assets/trash.png"
-                alt="lixeira"
-              />
+            <h3 className="transaction">{element.description}</h3>
+            <h5 className="description">{element.transaction}</h5>
+            <span className="value">&#8369;{element.value}</span>
+            <button className="bin" onClick={() => handleItenList(element)}>
+            <BsTrashFill />
             </button>
           </div>
           <p className="type">{element.type}</p>
         </div>
       ) : (
-        <div className="containerListVermelho">
+        <div className="containerListRed">
           <div className="ContainerDescriptionEType">
-            <h3 className="description">{element.description}</h3>
-            <span className="valor">R$ {element.value}</span>
-            <button className="lixeira" onClick={() => handleItenList(element)}>
-              <img
-                className="imgLixeira"
-                src="assets/trash.png"
-                alt="lixeira"
-              />
+            <h3 className="transaction">{element.description}</h3>
+            <h5 className="description">{element.transaction}</h5>
+            <span className="value">&#8369;{element.value}</span>
+            <button className="bin" onClick={() => handleItenList(element)}>
+            <BsTrashFill />
             </button>
           </div>
           <p className="type">{element.type}</p>

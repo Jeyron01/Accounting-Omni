@@ -7,9 +7,12 @@ export default function Header({ setLogin }) {
   return (
     <>
       <header className="headerContainer">
-        <img src="assets/Nu Kenzie Preto.png" alt="Logo" />
+      <div className="company">
+      <img src="assets/Nu Kenzie.png"/>
+      <h3>OMNITECH</h3>
+      </div>
         <button className="btn" onClick={() => backToWelcomePage()}>
-          Inicio
+          Logout
         </button>
       </header>
     </>

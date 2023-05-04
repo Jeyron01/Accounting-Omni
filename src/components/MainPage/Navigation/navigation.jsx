@@ -1,14 +1,18 @@
 import "./styleNavigation.css";
 export default function Navigation({ listFilter, setListFilter, toDoList }) {
+  function filtrarIncome() {
+    const result = toDoList.filter((itens) => itens.type === "Income");
+    setListFilter(result);
+  }
+  
   function filtrarEntradas() {
-    const result = toDoList.filter((itens) => itens.type === "Entrada");
+    const result = toDoList.filter((itens) => itens.type === "Expense");
     setListFilter(result);
   }
 
   function filtrarDespezas() {
-    const result = toDoList.filter((itens) => itens.type === "Despeza");
+    const result = toDoList.filter((itens) => itens.type === "Transfer");
     setListFilter(result);
-    console.log(result);
   }
   function mostrarTodos() {
     /* const result = toDoList.filter(
@@ -20,16 +24,19 @@ export default function Navigation({ listFilter, setListFilter, toDoList }) {
   return (
     <>
       <nav className="containerNavigation">
-        <h3>Resumo financeiro</h3>
+        <h4 className="title">Financial Report</h4>
         <div className="containerBtn">
-          <button className="btn_Rosa" onClick={() => mostrarTodos()}>
-            Todos
+          <button className="all" onClick={() => mostrarTodos()}>
+            All Records
           </button>
-          <button className="btn_Cinza" onClick={() => filtrarEntradas()}>
-            Entradas
+          <button className="others" onClick={() => filtrarIncome()}>
+            Income
           </button>
-          <button className="btn_Cinza" onClick={() => filtrarDespezas()}>
-            Despezas
+          <button className="others" onClick={() => filtrarEntradas()}>
+            Expense
+          </button>
+          <button className="others" onClick={() => filtrarDespezas()}>
+            Transfer
           </button>
         </div>
       </nav>

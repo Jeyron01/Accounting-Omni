@@ -1,16 +1,17 @@
 .total-money {
-  height: 96px;
+  margin-top: 10px;
+  height: 67px;
   box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
-  padding: 15px 30px;
+  padding: 30px 30px;
 }
 .containerMoney {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .saldo {
   font-weight: 700;
   font-size: 16px;
   line-height: 30px;
-  color: #fd377e;
+  color: #68a2ff;
 }

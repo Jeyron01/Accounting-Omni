@@ -10,7 +10,7 @@ export default function List({
     <>
       {toDoList.length === 0 ? (
         <>
-          <h3>Você ainda não possui nenhum lançamento </h3>
+          <h3>No Record Found</h3>
           <img className="imgNoCard" src="assets/NoCard.png" alt="NoCard" />
         </>
       ) : listFilter.length === 0 ? (
@@ -21,7 +21,7 @@ export default function List({
             listFilter={listFilter}
             toDoList={toDoList}
             setToDoList={setToDoList}
-            tipoValor={element.type}
+            valueType={element.type}
             element={element}
           />
         ))
@@ -33,7 +33,7 @@ export default function List({
             toDoList={toDoList}
             setListFilter={setListFilter}
             setToDoList={setToDoList}
-            tipoValor={element.type}
+            valueType={element.type}
             element={element}
           />
         ))

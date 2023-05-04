@@ -4,10 +4,10 @@ export default function TotalMoney({ toDoList }) {
   return (
     <div className="total-money">
       <div className="containerMoney">
-        <h3>Valor total:</h3>
-        <h3 className="saldo">$ {total}</h3>
+        <h3>Total Balance:</h3>
+        <h3 className="saldo">&#8369; {total}</h3>
       </div>
-      <span>O valor se refere ao saldo</span>
+      <span>This is the total balance you have</span>
     </div>
   );
 }

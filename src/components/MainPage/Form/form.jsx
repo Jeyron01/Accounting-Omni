@@ -1,78 +1,133 @@
 import "./styleForm.css";
+import React, { useState } from 'react';
+import CreatableSelect from 'react-select/creatable';
+
+const createOption = (label) => ({
+  label,
+  value: label.toLowerCase().replace(/\W/g, ''),
+});
+
+const defaultOptions = [
+  createOption(''),
+  createOption('GCash'),
+  createOption('Cash on Bank'),
+  createOption('Cash in Hand'),
+];
+
 export default function Form({
   toDoList,
   setToDoList,
-  valorInput,
-  setValorInput,
-  valorDinheiro,
-  setValorDinheiro,
-  tipoValor,
-  setTipoValor,
+  valueTo,
+  valueFrom,
+  setValueTo,
+  setValueFrom,
+  valueMoney,
+  setValueMoney,
+  valueType,
+  setValueType ,
+  valueDes,
+  setValueDes,
 }) {
-  function verificacao(e) {
+  function verification(e) {
     e.preventDefault();
-    if (valorInput !== "" && valorDinheiro !== "" && tipoValor !== "") {
-      ReceberValorForm();
+    if (valueMoney !== "" && valueType !== "") {
+      Compute();
     }
   }
 
-  function ReceberValorForm() {
+  function Compute() {
     const novoObjeto = {
-      description: valorInput,
-      type: tipoValor,
+      transaction: valueFrom.label + " ===> " + valueTo.label,
+      description: valueDes,
+      type: valueType,
       value:
-        tipoValor === "Despeza"
-          ? parseInt(valorDinheiro) * -1
-          : parseInt(valorDinheiro),
+        valueType === "Expense"
+      ? parseInt(valueMoney) * -1
+      : valueType === "Transfer"
+      ? parseInt(valueMoney) * -1
+      : parseInt(valueMoney),
     };
-
+    
     setToDoList([...toDoList, novoObjeto]);
   }
 
+  const [isLoading, setIsLoading] = useState(false);
+  const [options, setOptions] = useState(defaultOptions);
+  const [, setValue] = useState();
+
+  const handleCreate = (inputValue) => {
+    setIsLoading(true);
+    setTimeout(() => {
+      const newOption = createOption(inputValue);
+      setIsLoading(false);
+      setOptions((prev) => [...prev, newOption]);
+      setValue(newOption);
+    }, 1000);
+  };
+  
   return (
     <>
-      <form onSubmit={(event) => verificacao(event)}>
+      <form onSubmit={(event) => verification(event)}>
         <div className="formCima">
-          <p>Descrição</p>
-          <input
+        <p>To</p>
+        <CreatableSelect
+      isClearable
+      isDisabled={isLoading}
+      isLoading={isLoading}
+      onChange={(newValue) => setValueTo(newValue)}
+      onCreateOption={handleCreate}
+      options={options}
+      value={valueTo}
+    />
+        <p>From</p>
+        <CreatableSelect
+      isClearable
+      isDisabled={isLoading}
+      isLoading={isLoading}
+      onChange={(newValue) => setValueFrom(newValue)}
+      onCreateOption={handleCreate}
+      options={options}
+      value={valueFrom}
+    />
+        <p>Description</p>
+        <input
             type="text"
-            value={valorInput}
-            placeholder="Digite aqui sua descrição"
-            onChange={(e) => setValorInput(e.target.value)}
+            value={valueDes}
+            placeholder="Enter description"
+            onChange={(e) => setValueDes(e.target.value)}
           />
-          <span className=" strigDeExemplo">Ex: compra de roupas</span>
         </div>
         <div className="formMeio">
-          <div className="divValor">
-            <p>Valor</p>
+          <div className="divValue">
+            <p>Amount</p>
             <input
               type="number"
-              value={valorDinheiro}
+              value={valueMoney}
               placeholder="0"
               min="1"
-              onChange={(e) => setValorDinheiro(e.target.value)}
+              onChange={(e) => setValueMoney(e.target.value)}
             />
             {/*  <p id="cifrao">R$</p> */}
           </div>
-          <div className="divValor">
-            <p>Tipo de valor</p>
+          <div className="divValue">
+            <p1>Type</p1>
             <label>
               <select
-                value={tipoValor}
+                value={valueType}
                 onChange={(event) => {
                   event.preventDefault();
-                  setTipoValor(event.target.value);
-                }}
-              >
-                <option value="">Selecione</option>
-                <option value="Entrada">Entrada</option>
-                <option value="Despeza">Despeza</option>
+                  setValueType  (event.target.value);}}>
+                <option value=""></option>
+                <option value="Income">Income</option>
+                <option value="Expense">Expense</option>
+                <option value="Transfer">Transfer</option>
               </select>
             </label>
           </div>
         </div>
-        <button type="submit">Inserir Valor</button>
+        <button type="submit">Submit</button>
       </form>
     </>
+    
   );
 }

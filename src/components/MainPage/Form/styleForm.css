@@ -1,6 +1,6 @@
 :root {
-  --color-primary: #fd377e;
-  --color-primary-2: #e34981;
+  --color-primary: #68a2ff;
+  --color-primary-2: #68a2ff;
   --color-secondary: #03b898;
 
   --color-grey-1: #f8f9fa;
@@ -12,10 +12,14 @@
 p {
   color: #212529;
 }
+p1 {
+  color: #212529;
+  margin-left: 5px;
+}
 
 form {
   width: 363px;
-  height: 351px;
+  height: 100%;
 
   border-radius: 4px;
   border: solid 2px var(--color-grey-2);
@@ -30,13 +34,13 @@ form {
   display: flex;
   flex-direction: column;
 
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   margin-top: 20px;
 }
 
 .formCima input {
   width: 350px;
-  height: 52.8px;
+  height: 30px;
 
   border: none;
   border-radius: 8px;
@@ -44,24 +48,19 @@ form {
   background-color: var(--color-grey-1);
 }
 
-.strigDeExemplo {
-  color: var(--color-grey-3);
-  margin-top: 25px;
-}
-
 .formMeio {
   display: flex;
   flex-direction: row;
 
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
-.divValor {
+.divValue {
   width: 128px;
   margin-right: 70px;
 }
 
-.divValor input {
+.divValue input {
   width: 128px;
   height: 48px;
 
@@ -74,6 +73,9 @@ form {
 select {
   width: 128px;
   height: 48px;
+
+  margin-top: 8px;
+  margin-left: 13px;
 
   border: none;
   border-radius: 8px;
@@ -125,14 +127,14 @@ select {
   .formCima input {
     width: 90%;
   }
-  .divValor {
+  .divValue {
     margin-right: 10%;
   }
 
-  .divValor input {
+  .divValue input {
     width: 90%;
   }
-  .divValor select {
+  .divValue select {
     width: 90%;
   }
 }

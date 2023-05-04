@@ -1,6 +1,6 @@
 import "./styleMainPage.css";
 import { useState } from "react";
-import Form from "./Form/form";
+import Form from "./Form/Form";
 import Header from "./Header/header";
 import List from "./List/List";
 import TotalMoney from "./TotalMoney/TotalMoney";
@@ -10,9 +10,11 @@ export default function MainPage({ setLogin }) {
   const [toDoList, setToDoList] = useState([]);
   const [listFilter, setListFilter] = useState([]);
 
-  const [valorInput, setValorInput] = useState("");
-  const [valorDinheiro, setValorDinheiro] = useState("");
-  const [tipoValor, setTipoValor] = useState("");
+  const [valueTo, setValueTo] = useState("");
+  const [valueFrom, setValueFrom] = useState("");
+  const [valueDes, setValueDes] = useState("");
+  const [valueMoney, setValueMoney] = useState("");
+  const [valueType, setValueType] = useState("");
 
   return (
     <>
@@ -23,12 +25,16 @@ export default function MainPage({ setLogin }) {
             <Form
               toDoList={toDoList}
               setToDoList={setToDoList}
-              valorInput={valorInput}
-              setValorInput={setValorInput}
-              valorDinheiro={valorDinheiro}
-              setValorDinheiro={setValorDinheiro}
-              tipoValor={tipoValor}
-              setTipoValor={setTipoValor}
+              valueTo={valueTo}
+              setValueTo={setValueTo}
+              valueFrom={valueFrom}
+              setValueFrom={setValueFrom}
+              valueDes={valueDes}
+              setValueDes={setValueDes}
+              valueMoney={valueMoney}
+              setValueMoney={setValueMoney}
+              valueType={valueType}
+              setValueType={setValueType}
             />
             <TotalMoney toDoList={toDoList} />
           </div>
@@ -40,7 +46,7 @@ export default function MainPage({ setLogin }) {
             toDoList={toDoList}
           />
           <List
-            tipoValor={tipoValor}
+            valueType={valueType}
             listFilter={listFilter}
             toDoList={toDoList}
             setToDoList={setToDoList}

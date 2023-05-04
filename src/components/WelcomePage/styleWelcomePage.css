@@ -16,9 +16,10 @@ aside {
   width: 123px;
 }
 
-.ilustracao {
-  width: 593px;
-  height: 593px;
+.illustration {
+  width: 500px;
+  height: 500px;
+  padding-left: 300px;
 }
 
 h1 {
@@ -29,22 +30,29 @@ h1 {
   width: 347px;
   height: 144px;
   margin-bottom: 28px;
+  text-align: center;
 }
-.bordao {
+h3{
+  color: white;
+  text-align: center;
+}
+.text {
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
   color: #ffffff;
   margin-bottom: 28px;
+  text-align: center;
 }
 .button {
-  width: 241px;
-  height: 48px;
-  background: #fd377e;
-  border: 2px solid #fd377e;
+  width: 100px;
+  padding: 10px;
+  background: #68a2ff;
+  border: 2px solid #68a2ff;
   color: #ffffff;
   border-radius: 8px;
   cursor: pointer;
+  margin-left: 120px;
 }
 
 @media only screen and (max-width: 980px) {
@@ -62,4 +70,22 @@ h1 {
   h1 {
     width: 320px;
   }
+}
+h2{
+  color: #66a0f8;
+  margin-top: -55px;
+  margin-bottom: 50px;
+  margin-left: 15px;
+  font-size: 40px;
+}
+
+.logo{
+  width: 200px;
+  height: 200px;
+  margin-left: 30px;
+}
+.companyLogo{
+  margin-left: 50px;
+  margin-top: -60px;
+  margin-bottom: 85px;
 }
