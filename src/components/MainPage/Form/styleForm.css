@@ -15,86 +15,53 @@ p {
 p1 {
   color: #212529;
   margin-left: 5px;
+  margin-top: 10px;
 }
 
 form {
-  width: 363px;
-  height: 100%;
-
+  width: 300px;
   border-radius: 4px;
   border: solid 2px var(--color-grey-2);
-  margin-right: 100px;
-
   padding: 1rem;
-
   box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
 }
 
-.formCima {
+.forms {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
-
-  margin-bottom: 30px;
-  margin-top: 20px;
+  
 }
 
-.formCima input {
-  width: 350px;
+.forms input, .divValue input, select {
+  width: 100%;
   height: 30px;
-
   border: none;
   border-radius: 8px;
-
   background-color: var(--color-grey-1);
-}
-
-.formMeio {
-  display: flex;
-  flex-direction: row;
-
-  margin-top: 30px;
 }
 
 .divValue {
-  width: 128px;
-  margin-right: 70px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.divValue input {
-  width: 128px;
+.divValue input, select {
+  width: 48%;
   height: 48px;
-
-  border: none;
-  border-radius: 8px;
-
-  background-color: var(--color-grey-1);
-}
-
-select {
-  width: 128px;
-  height: 48px;
-
-  margin-top: 8px;
-  margin-left: 13px;
-
-  border: none;
-  border-radius: 8px;
-
-  background-color: var(--color-grey-1);
 }
 
 form button {
-  margin: 0 auto;
-  width: 90%;
+  width: 100%;
   height: 48px;
-
   background-color: var(--color-primary);
   border: none;
   border-radius: 8px;
   color: var(--color-grey-1);
-
   cursor: pointer;
-
   display: flex;
   text-align: center;
   justify-content: center;
@@ -108,33 +75,37 @@ form button {
   left: 100px;
 }
 
-input {
+input, select {
   padding: 0 0 0 15px;
 }
 
 select {
   padding: 0 0 0 8px;
+  width: 130px;
 }
 
-@media only screen and (max-width: 1108px) {
+@media only screen and (max-width: 1200px) {
   form {
-    margin-right: 0px;
-    width: 90%;
+    margin-right: 80px;
+    width: 100%;
+    margin-left: -15px;
   }
 }
+
+
 
 @media only screen and (max-width: 500px) {
-  .formCima input {
-    width: 90%;
+  form {
+    max-width: 100%;
   }
   .divValue {
-    margin-right: 10%;
+    flex-direction: column;
   }
-
-  .divValue input {
-    width: 90%;
+  .divValue input, select {
+    width: 100%;
+    margin-bottom: 10px;
   }
-  .divValue select {
-    width: 90%;
+  form button {
+    margin-top: 10px;
   }
 }

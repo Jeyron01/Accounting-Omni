@@ -1,6 +1,9 @@
-  .containerNavigation {
+.containerNavigation {
   display: flex;
-  margin-bottom: 40px;
+  margin-top: -10px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+  margin-right: 20px;
   align-items: center;
   justify-content: space-between;
 }
@@ -15,6 +18,7 @@
   cursor: pointer;
   color: #ffffff;   
 }
+
 .others {
   color: #343a40;
   text-align: center;
@@ -27,26 +31,24 @@
 }
 
 .containerBtn {
-  display:inline-flex;
-  width: 60%; 
-
+  display: inline-flex;
+  width: 80px;
+  padding: 20px;
   gap: 20px;
 }
 
 .btn_Cinza:hover {
   transition-duration: 650ms;
-
   background-color: black;
   color: #ffffff;
 }
+
 .btn_Rosa:hover {
   transition-duration: 650ms;
-
   background-color: black;
   color: #ffffff;
 }
-
-@media only screen and (max-width: 434px) {
+@media only screen and (max-width: 1080px) {
   .containerBtn {
     width: 100%;
     gap: 20px;
@@ -57,7 +59,34 @@
     margin-top: 30px;
   }
 }
-h4.title{
-  color: #68a2ff;
-  margin-top: 10px;
+
+@media only screen and (max-width: 768px) {
+  .containerBtn {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .containerNavigation {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  h4.title {
+    font-size: 18px;
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .containerBtn {
+    width: 100%;
+    gap: 20px;
+    margin-left: -60px;
+  }
+
+  .containerNavigation {
+    flex-direction: column;
+    margin-top: 30px;
+  }
 }

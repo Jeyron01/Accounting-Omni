@@ -1,23 +1,23 @@
 import "./styleNavigation.css";
 export default function Navigation({ listFilter, setListFilter, toDoList }) {
   function filtrarIncome() {
-    const result = toDoList.filter((itens) => itens.type === "Income");
+    const result = toDoList.filter((itens) => itens.type === "0");
     setListFilter(result);
   }
   
   function filtrarEntradas() {
-    const result = toDoList.filter((itens) => itens.type === "Expense");
+    const result = toDoList.filter((itens) => itens.type === "1");
     setListFilter(result);
   }
 
   function filtrarDespezas() {
-    const result = toDoList.filter((itens) => itens.type === "Transfer");
+    const result = toDoList.filter((itens) => itens.type === "2");
     setListFilter(result);
   }
   function mostrarTodos() {
-    /* const result = toDoList.filter(
-      (item) => item.type === "Despeza" && item.type === "Entrada"
-    ); */
+    /*const result = toDoList.filter(
+      (item) => item.type === "Income" && item.type === "Expense" && item.type === "Transfer"
+    );*/
     setListFilter(toDoList);
   }
 

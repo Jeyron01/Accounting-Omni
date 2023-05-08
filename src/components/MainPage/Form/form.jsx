@@ -17,8 +17,8 @@ const defaultOptions = [
 export default function Form({
   toDoList,
   setToDoList,
-  valueTo,
-  valueFrom,
+  toAccountId,
+  fromAccountId,
   setValueTo,
   setValueFrom,
   valueMoney,
@@ -37,7 +37,7 @@ export default function Form({
 
   function Compute() {
     const novoObjeto = {
-      transaction: valueFrom.label + " ===> " + valueTo.label,
+      transaction: fromAccountId.label + " / " + toAccountId.label,
       description: valueDes,
       type: valueType,
       value:
@@ -68,7 +68,7 @@ export default function Form({
   return (
     <>
       <form onSubmit={(event) => verification(event)}>
-        <div className="formCima">
+        <div className="forms">
         <p>To</p>
         <CreatableSelect
       isClearable
@@ -77,7 +77,7 @@ export default function Form({
       onChange={(newValue) => setValueTo(newValue)}
       onCreateOption={handleCreate}
       options={options}
-      value={valueTo}
+      value={toAccountId}
     />
         <p>From</p>
         <CreatableSelect
@@ -87,7 +87,7 @@ export default function Form({
       onChange={(newValue) => setValueFrom(newValue)}
       onCreateOption={handleCreate}
       options={options}
-      value={valueFrom}
+      value={fromAccountId}
     />
         <p>Description</p>
         <input
@@ -110,7 +110,7 @@ export default function Form({
             {/*  <p id="cifrao">R$</p> */}
           </div>
           <div className="divValue">
-            <p1>Type</p1>
+            <p>Type</p>
             <label>
               <select
                 value={valueType}

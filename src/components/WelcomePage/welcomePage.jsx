@@ -1,10 +1,8 @@
 import "./styleWelcomePage.css";
+import { useNavigate } from "react-router-dom";
 
-export default function WelcomePage({ setLogin }) {
-  function LoginTrue() {
-    setLogin(true); 
-  }
-
+export default function WelcomePage() {
+  const navigate = useNavigate();
   return (
     <>
       <main className="HomePage">
@@ -20,7 +18,7 @@ export default function WelcomePage({ setLogin }) {
             </div>
             <h1>Welcome kaOMNIVERSE!</h1>
             <p className="text">Your problem, my solution!</p>
-            <button className="button" onClick={() => LoginTrue()}>
+            <button className="button" onClick={()=>navigate("/main")}>
               Enter
             </button>
           </div>

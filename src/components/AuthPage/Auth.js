@@ -1,8 +1,10 @@
 import React from "react";
 import * as Components from './Components';
+import { useNavigate } from "react-router-dom";
 
 function Auth() {
     const [signIn, toggle] = React.useState(true);
+    const navigate = useNavigate();
      return(
          <Components.Container>
              <Components.SignUpContainer signinIn={signIn}>
@@ -21,7 +23,7 @@ function Auth() {
                       <Components.Input type='email' placeholder='Email' />
                       <Components.Input type='password' placeholder='Password' />
                       <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                      <Components.Button>Sigin In</Components.Button>
+                      <Components.Button onClick={()=>navigate("/main")}>Sign In</Components.Button>
                   </Components.Form>
              </Components.SignInContainer>
 

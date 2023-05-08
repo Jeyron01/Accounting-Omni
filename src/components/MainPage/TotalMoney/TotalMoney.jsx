@@ -5,9 +5,8 @@ export default function TotalMoney({ toDoList }) {
     <div className="total-money">
       <div className="containerMoney">
         <h3>Total Balance:</h3>
-        <h3 className="saldo">&#8369; {total}</h3>
       </div>
-      <span>This is the total balance you have</span>
+      <span className="saldo">&#8369; {total}</span>
     </div>
   );
 }

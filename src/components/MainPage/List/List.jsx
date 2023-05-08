@@ -6,15 +6,16 @@ export default function List({
   setToDoList,
   setListFilter,
 }) {
+
   return (
     <>
       {toDoList.length === 0 ? (
         <>
-          <h3>No Record Found</h3>
+          <h3 className="NRF">No Record Found</h3>
           <img className="imgNoCard" src="assets/NoCard.png" alt="NoCard" />
         </>
       ) : listFilter.length === 0 ? (
-        toDoList.map((element, index) => (
+        listFilter.map((element, index) => (
           <Card
             key={index}
             setListFilter={setListFilter}

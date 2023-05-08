@@ -9,6 +9,7 @@
 .containerNavigationEList {
   width: 45%;
 }
+
 .containerFormTotalMoney {
   width: 80%;
 }
@@ -30,9 +31,7 @@
     margin-right: 0px;
     width: 100%;
   }
-  .containerFormTotalMoney {
-    width: 100%;
-  }
+  .containerFormTotalMoney,
   .containerNavigationEList {
     width: 100%;
   }

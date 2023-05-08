@@ -1,20 +1,30 @@
 import "./styleMainPage.css";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Form from "./Form/Form";
 import Header from "./Header/header";
 import List from "./List/List";
 import TotalMoney from "./TotalMoney/TotalMoney";
 import Navigation from "./Navigation/navigation";
+import axios from "axios";
 
 export default function MainPage({ setLogin }) {
   const [toDoList, setToDoList] = useState([]);
   const [listFilter, setListFilter] = useState([]);
 
-  const [valueTo, setValueTo] = useState("");
-  const [valueFrom, setValueFrom] = useState("");
-  const [valueDes, setValueDes] = useState("");
-  const [valueMoney, setValueMoney] = useState("");
+  const [toAccountId, setValueTo] = useState("");
+  const [fromAccountId, setValueFrom] = useState("");
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState("");
   const [valueType, setValueType] = useState("");
+
+  async function onMount() {
+    const result = await axios.get("http://18.136.84.195:90/api/Transaction");
+    setToDoList(result.data)
+  }
+
+  useEffect(()=>{
+    onMount();
+  },[]);
 
   return (
     <>
@@ -25,14 +35,14 @@ export default function MainPage({ setLogin }) {
             <Form
               toDoList={toDoList}
               setToDoList={setToDoList}
-              valueTo={valueTo}
+              toAccountId={toAccountId}
               setValueTo={setValueTo}
-              valueFrom={valueFrom}
+              fromAccountId={fromAccountId}
               setValueFrom={setValueFrom}
-              valueDes={valueDes}
-              setValueDes={setValueDes}
-              valueMoney={valueMoney}
-              setValueMoney={setValueMoney}
+              description={description}
+              setDescription={setDescription}
+              amount={amount}
+              setAmount={setAmount}
               valueType={valueType}
               setValueType={setValueType}
             />

@@ -1,17 +1,53 @@
 .total-money {
-  margin-top: 10px;
-  height: 67px;
+  margin-top: 2.5rem;
+  height: 5rem;
   box-shadow: 0px 4px 32px -12px rgba(0, 0, 0, 0.25);
-  padding: 30px 30px;
+  padding: 2rem;
 }
+
 .containerMoney {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-top: -1rem;
 }
+
 .saldo {
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 30px;
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 2.5rem;
   color: #68a2ff;
+}
+
+@media only screen and (max-width: 768px) {
+  .total-money {
+    margin-top: 1.5rem;
+    height: 4rem;
+    padding: 1.5rem;
+  }
+  
+  .containerMoney {
+    margin-top: -1rem;
+  }
+
+  .saldo {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .total-money {
+    margin-top: 1rem;
+    height: 5rem;
+    padding: 1rem;
+  }
+  
+  .containerMoney {
+    margin-top: -0.5rem;
+  }
+
+  .saldo {
+    font-size: 30px;
+    line-height: 1.5rem;
+  }
 }
